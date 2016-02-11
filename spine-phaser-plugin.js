@@ -13,12 +13,10 @@ Phaser.Plugin.Spine.SpineObject = function(game, options) {
   var image_key = options.image || '';
   var skin_key = options.skin || 'default';
   var anim_key = options.anim || '';
-  this.json = game.cache.getJSON(json_key);
-  this.atlas = game.cache.getText(atlas_key);
+  this.spine_data = new spine.Data().load(game.cache.getJSON(json_key));
+  this.atlas_data = new atlas.Data().importAtlasText(game.cache.getText(atlas_key));
   this.images = {};
   this.images[image_key] = game.cache.getImage(image_key);
-  this.spine_data = new spine.Data().load(this.json);
-  this.atlas_data = new atlas.Data().importAtlasText(this.atlas);
   this.spine_pose = new spine.Pose(this.spine_data);
   this.spine_pose.setSkin(skin_key);
   this.spine_pose.setAnim(anim_key);
@@ -50,11 +48,9 @@ Phaser.Plugin.Spine.SpineObject.prototype.destroy = function(game) {
   } else {
     console.log("TODO");
   }
-  delete this.json;
-  delete this.atlas;
-  delete this.images;
   delete this.spine_data;
   delete this.spine_pose;
+  delete this.images;
   Phaser.Group.prototype.destroy.call(this, game);
 }
 Phaser.Plugin.Spine.SpineObject.prototype.update = function() {
