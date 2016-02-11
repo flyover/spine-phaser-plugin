@@ -1,10 +1,10 @@
 function main() {
   function preload(game) {
     //console.log("preload", arguments);
-    game.load.image('logo', '/phaser/phaser-logo-small.png');
-    game.load.json('raptor.json', '/spine.js/demo/examples/raptor/export/raptor.json');
-    game.load.text('raptor.atlas', '/spine.js/demo/examples/raptor/export/raptor.atlas');
-    game.load.image('raptor.png', '/spine.js/demo/examples/raptor/export/raptor.png');
+    game.load.image('logo', 'https://cdn.rawgit.com/photonstorm/phaser/master/phaser-logo-small.png');
+    game.load.json('raptor.json', 'https://cdn.rawgit.com/flyover/spine.js/master/demo/examples/raptor/export/raptor.json');
+    game.load.text('raptor.atlas', 'https://cdn.rawgit.com/flyover/spine.js/master/demo/examples/raptor/export/raptor.atlas');
+    game.load.image('raptor.png', 'https://cdn.rawgit.com/flyover/spine.js/master/demo/examples/raptor/export/raptor.png');
   }
   function create(game) {
     //console.log("create", arguments);
