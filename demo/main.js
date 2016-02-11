@@ -10,7 +10,7 @@ function main() {
     //console.log("create", arguments);
     var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
     logo.anchor.setTo(0.5, 0.5);
-    var raptor = game.add.spine({ json: 'raptor.json', atlas: 'raptor.atlas', image: 'raptor.png', data: 'raptor', skin: 'default', anim: 'walk' });
+    var raptor = game.add.spine({ json: 'raptor.json', atlas: 'raptor.atlas', image: 'raptor.png', skin: 'default', anim: 'walk' });
     raptor.scale.setTo(0.25, 0.25);
   }
   function update(game) {

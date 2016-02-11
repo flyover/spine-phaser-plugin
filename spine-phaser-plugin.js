@@ -11,7 +11,6 @@ Phaser.Plugin.Spine.SpineObject = function(game, options) {
   var json_key = options.json || '';
   var atlas_key = options.atlas || '';
   var image_key = options.image || '';
-  var data_key = options.data || '';
   var skin_key = options.skin || 'default';
   var anim_key = options.anim || '';
   this.json = game.cache.getJSON(json_key);
